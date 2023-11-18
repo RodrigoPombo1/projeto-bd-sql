@@ -112,21 +112,21 @@ DROP TABLE IF EXISTS Achievement;
 CREATE TABLE Achievement (
     achiev_ID INTEGER PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
-    hidden BOOLEAN,
+    hidden_? BOOLEAN,
     game_ID INTEGER NOT NULL,
     FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID),
-    CONSTRAINT CHK_Hidden_NotNull CHECK (hidden IS NOT NULL)
+    CONSTRAINT CHK_Hidden_NotNull CHECK (hidden_? IS NOT NULL)
 );
 
 -- Tabela Possui
 DROP TABLE IF EXISTS Possui;
 CREATE TABLE Possui (
     game_ID INTEGER NOT NULL,
-    nome_tipo INTEGER NOT NULL,
+    tipo_ID INTEGER NOT NULL,
     data DATE NOT NULL,
-    PRIMARY KEY (game_ID, nome_tipo, data),
+    PRIMARY KEY (game_ID, tipo_ID, data),
     FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID),
-    FOREIGN KEY (nome_tipo) REFERENCES Updates(tipo_ID),
+    FOREIGN KEY (tipo_ID) REFERENCES Updates(tipo_ID),
     CONSTRAINT CHK_Data_NotFuture CHECK (data <= CURRENT_DATE)
 );
 
