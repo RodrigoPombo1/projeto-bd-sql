@@ -31,14 +31,14 @@ VALUES
   (26, 'Cyberpunk 2077', 'Cyberpunk 2077 é um RPG de ação num mundo aberto que decorre em Night City, uma megalópole perigosa onde todos estão obcecados pelo poder, glamour e alterações ao corpo.', '10-12-2020', 59.99, 4.05, 36600, 41162, 17),
   (27, 'ARK: Survival Evolved', 'Stranded on the shores of a mysterious island, you must learn to survive. Use your cunning to kill or tame the primeval creatures roaming the land, and encounter other players to survive, dominate... and escape!', '27-08-2017', 14.79, 4.15, 34624, 46735, 16),
   (28, 'Rocket League', 'Futebol e condução encontram-se uma vez mais na aguardada sequela do clássico de arena baseado na física que conquistou os jogadores, o Supersonic Acrobatic Rocket-Powered Battle-Cars!', '07-07-2015', 0, 4.45, 33897, 33897, 13),
-  (29, '7 Days to Die', '', '2017-03-03', 22.99, 5, 30211, 39882, 10),
-  (30, 'Destiny 2', '', '2017-03-03', 0, 5, 31447, 31647, 10),
-  (31, 'New World', '', '2017-03-03', 37.99, 5, 30005, 30837, 10),
-  (32, 'The Sims™ 4', '', '2017-03-03', 0, 5, 29420, 30631, 10),
-  (33, 'Stardew Valley', '', '2017-03-03', 13.99, 5, 28762, 32265, 10),
-  (34, 'Phasmophobia', '', '2017-03-03', 11.59, 5, 26286, 28845, 10),
-  (35, 'Project Zomboid', '', '2017-03-03', 19.50, 5, 28700, 29878, 10),
-  (36, 'Terraria', '', '2017-03-03', 9.75, 5, 26719, 38735, 10),
+  (29, '7 Days to Die', '7 Days to Die is an open-world game that is a unique combination of first-person shooter, survival horror, tower defense, and role-playing games. Play the definitive zombie survival sandbox RPG that came first. Navezgane awaits!', '13-12-2013', 22.99, 4.4, 30211, 39882, 13),
+  (30, 'Destiny 2', 'Destiny 2 é um jogo de ação MMO com um mundo em evolução, onde tu e os teus amigos podem entrar a qualquer hora, em qualquer lugar, totalmente grátis.', '01-10-2019', 0, 4.05, 31447, 31647, 13),
+  (31, 'New World', 'Explore a thrilling, open-world MMO filled with danger and opportunity where you’ll forge a new destiny on the supernatural island of Aeternum.', '28-09-2021', 37.99, 3.5, 30005, 30837, 18),
+  (32, 'The Sims™ 4', 'Aprecia o poder de criares e controlares pessoas num mundo virtual onde não há regras. Sê poderoso e livre, diverte-te e joga com a vida!', '02-09-2014', 0, 4.35, 29420, 30631, 12),
+  (33, 'Stardew Valley', 'You’ve inherited your grandfather’s old farm plot in Stardew Valley. Armed with hand-me-down tools and a few coins, you set out to begin your new life. Can you learn to live off the land and turn these overgrown fields into a thriving home?', '29-02-2016', 13.99, 4.9, 28762, 32265, 12),
+  (34, 'Phasmophobia', 'Phasmophobia is a 4 player online co-op psychological horror. Paranormal activity is on the rise and it’s up to you and your team to use all the ghost-hunting equipment at your disposal in order to gather as much evidence as you can.', '18-09-2022', 11.59, 4.8, 26286, 28845, 16),
+  (35, 'Project Zomboid', 'Project Zomboid is the ultimate in zombie survival. Alone or in MP: you loot, build, craft, fight, farm and fish in a struggle to survive. A hardcore RPG skillset, a vast map, massively customisable sandbox and a cute tutorial raccoon await the unwary. So how will you die? All it takes is a bite..', '8-11-2013', 19.50, 4.7, 28700, 29878, 12),
+  (36, 'Terraria', 'Escave, lute, explore, construa! Nada é impossível neste jogo de aventura cheio de ação. Pacote com Quatro também disponível!', '16-05-2011', 9.75, 4.85, 26719, 38735, 13),
   (37, 'PAYDAY 2', '', '2017-03-03', 9.99, 5, 27341, 31575, 10),
   (38, 'NARAKA: BLADEPOINT', '', '2017-03-03', 0, 5, 20776, 277089, 10),
   (39, 'Valheim', '', '2017-03-03', 19.99, 5, 25733, 26657, 10),
@@ -64,6 +64,26 @@ VALUES
   (5, 'Shooter'),
   (6, 'Party'),
   (7, 'Simulation');
+  (8, 'Simulation');
+  (9, 'Simulation');
+  (10, 'Simulation');
+  (11, 'Simulation');
+  (12, 'Simulation');
+  (13, 'Simulation');
+  (14, 'Simulation');
+  (15, 'Simulation');
+  (16, 'Simulation');
+  (17, 'Simulation');
+  (18, 'Simulation');
+  (19, 'Simulation');
+  (20, 'Simulation');
+  (21, 'Simulation');
+  (22, 'Simulation');
+  (23, 'Simulation');
+  (24, 'Simulation');
+  (25, 'Simulation');
+  (26, 'Simulation');
+  (27, 'Simulation');
 
 -- Pertence
 INSERT INTO Pertence (game_ID, gen_ID)
