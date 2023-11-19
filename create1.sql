@@ -118,6 +118,14 @@ CREATE TABLE Achievement (
     CONSTRAINT CHK_Hidden_NotNull CHECK (hidden_? IS NOT NULL)
 );
 
+-- Tabela Updates
+DROP TABLE IF EXISTS Updates;
+CREATE TABLE Updates (
+    tipo_ID INTEGER PRIMARY KEY,
+    nome_tipo VARCHAR(255) NOT NULL
+);
+
+
 -- Tabela Possui
 DROP TABLE IF EXISTS Possui;
 CREATE TABLE Possui (
@@ -128,11 +136,4 @@ CREATE TABLE Possui (
     FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID),
     FOREIGN KEY (tipo_ID) REFERENCES Updates(tipo_ID),
     CONSTRAINT CHK_Data_NotFuture CHECK (data <= CURRENT_DATE)
-);
-
--- Tabela Updates
-DROP TABLE IF EXISTS Updates;
-CREATE TABLE Updates (
-    tipo_ID INTEGER PRIMARY KEY,
-    nome_tipo VARCHAR(255) NOT NULL
 );
