@@ -114,10 +114,10 @@ DROP TABLE IF EXISTS Achievement;
 CREATE TABLE Achievement (
     achiev_ID INTEGER PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
-    hidden_? INTEGER,
+    hidden INTEGER,
     game_ID INTEGER NOT NULL,
     FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT CHK_Hiddem_Range CHECK (rating BETWEEN 0 AND 1)
+    CONSTRAINT CHK_Hiddem_Range CHECK (hidden BETWEEN 0 AND 1)
 );
 
 -- Tabela Updates

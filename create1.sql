@@ -114,10 +114,10 @@ DROP TABLE IF EXISTS Achievement;
 CREATE TABLE Achievement (
     achiev_ID INTEGER PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
-    hidden_? BOOLEAN,
+    hidden BOOLEAN,
     game_ID INTEGER NOT NULL,
     FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT CHK_Hidden_NotNull CHECK (hidden_? IS NOT NULL)
+    CONSTRAINT CHK_Hidden_NotNull CHECK (hidden IS NOT NULL)
 );
 
 -- Tabela Updates

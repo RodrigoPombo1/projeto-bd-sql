@@ -813,7 +813,7 @@ VALUES
   (96, 'Historical events come to life in gaming.', 5, '2023-05-26', 16, 42);
 
 -- Achievement
-INSERT INTO Achievement (achiev_ID, nome, hidden_?, game_ID)
+INSERT INTO Achievement (achiev_ID, nome, hidden, game_ID)
 VALUES
   (1, 'Mestre das Headshots em Counter-Strike 2', 0, 1),
   (2, 'Guardião dos Ancients em Dota 2', 0, 2),
