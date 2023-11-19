@@ -1,3 +1,5 @@
+PRAGMA	foreign_keys	=	ON;
+
 -- Tabela Jogo
 DROP TABLE IF EXISTS Jogo;
 CREATE TABLE Jogo (
@@ -6,7 +8,7 @@ CREATE TABLE Jogo (
     descricao TEXT,
     data_lancamento DATE,
     preco_atual DECIMAL(10, 2),
-    rating INT,
+    rating DECIMAL(3, 2),
     players_online INT,
     peak_players INT,
     idade_minima INT,
@@ -30,8 +32,8 @@ CREATE TABLE Pertence (
     game_ID INTEGER NOT NULL,
     gen_ID INTEGER NOT NULL,
     PRIMARY KEY (game_ID, gen_ID),
-    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID),
-    FOREIGN KEY (gen_ID) REFERENCES Genero(gen_ID)
+    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID) ON DELETE NO ACTION ON UPDATE CASCADE,
+    FOREIGN KEY (gen_ID) REFERENCES Genero(gen_ID) ON DELETE NO ACTION ON UPDATE CASCADE
 );
 
 -- Tabela Desenvolvedor
@@ -48,8 +50,8 @@ CREATE TABLE Criado (
     game_ID INTEGER NOT NULL,
     dev_ID INTEGER NOT NULL,
     PRIMARY KEY (game_ID, dev_ID),
-    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID),
-    FOREIGN KEY (dev_ID) REFERENCES Desenvolvedor(dev_ID)
+    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID) ON DELETE NO ACTION ON UPDATE CASCADE,
+    FOREIGN KEY (dev_ID) REFERENCES Desenvolvedor(dev_ID) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- Tabela Publicador
@@ -66,8 +68,8 @@ CREATE TABLE Publicado (
     game_ID INTEGER NOT NULL,
     pub_ID INTEGER NOT NULL,
     PRIMARY KEY (game_ID, pub_ID),
-    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID),
-    FOREIGN KEY (pub_ID) REFERENCES Publicador(pub_ID)
+    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID) ON DELETE NO ACTION ON UPDATE CASCADE,
+    FOREIGN KEY (pub_ID) REFERENCES Publicador(pub_ID) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- Tabela Preco
@@ -78,7 +80,7 @@ CREATE TABLE Preco (
     data_fim DATE,
     game_ID INTEGER NOT NULL,
     PRIMARY KEY (data_in, game_ID),
-    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID)
+    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- Tabela User
@@ -102,8 +104,8 @@ CREATE TABLE Review (
     data_publicacao DATE,
     game_ID INTEGER NOT NULL,
     user_ID INTEGER NOT NULL,
-    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID),
-    FOREIGN KEY (user_ID) REFERENCES User(user_ID),
+    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (user_ID) REFERENCES User(user_ID) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT CHK_RatingReview_Range CHECK (rating_review BETWEEN 1 AND 5)
 );
 
@@ -112,10 +114,10 @@ DROP TABLE IF EXISTS Achievement;
 CREATE TABLE Achievement (
     achiev_ID INTEGER PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
-    hidden_? BOOLEAN,
+    hidden_? INTEGER,
     game_ID INTEGER NOT NULL,
-    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID),
-    CONSTRAINT CHK_Hidden_NotNull CHECK (hidden_? IS NOT NULL)
+    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT CHK_Hiddem_Range CHECK (rating BETWEEN 0 AND 1)
 );
 
 -- Tabela Updates
@@ -133,7 +135,7 @@ CREATE TABLE Possui (
     tipo_ID INTEGER NOT NULL,
     data DATE NOT NULL,
     PRIMARY KEY (game_ID, tipo_ID, data),
-    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID),
-    FOREIGN KEY (tipo_ID) REFERENCES Updates(tipo_ID),
+    FOREIGN KEY (game_ID) REFERENCES Jogo(game_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (tipo_ID) REFERENCES Updates(tipo_ID) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT CHK_Data_NotFuture CHECK (data <= CURRENT_DATE)
 );
